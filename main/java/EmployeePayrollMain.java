@@ -27,9 +27,8 @@ public class EmployeePayrollMain {
 //            System.out.println("Created table in given database...");
 //            boolean val = stmt.execute("select * from employee_payroll");
 //            System.out.println("Showing data present in table");
-//            boolean val = stmt.execute("select * from employee_payroll where name = 'prajwal'");
+//            boolean val = stmt.execute("select * from employee_payroll where name = 'Terissa'");
             boolean val = stmt.execute("select * from employee_payroll");
-//
            if (val){
                 ResultSet rs = stmt.getResultSet();
                 while (rs.next()) {
@@ -166,17 +165,17 @@ public class EmployeePayrollMain {
 
 
 // ***********************************UC9***************************************************************************
-            int isupdated = stmt.executeUpdate("alter table employee_payroll add basic_pay int after salary");
-            int isupdated1 = stmt.executeUpdate("alter table employee_payroll add deductions int after basic_pay");
-            int isupdated2 = stmt.executeUpdate("alter table employee_payroll add taxable_pay int after deductions;");
-            int isupdated3 = stmt.executeUpdate("alter table employee_payroll add income_tax int after taxable_pay");
-            int isupdated4 = stmt.executeUpdate("alter table employee_payroll add net_pay int after income_tax");
-            stmt.executeUpdate(" update employee_payroll set basic_pay = 3000000.0 , deductions = 25000.0, taxable_pay = 300000.0, income_tax = 75000.0 , net_pay = 500000.0 where id = 1;");
-            stmt.executeUpdate(" update employee_payroll set basic_pay = 4000000.0 , deductions = 10000.0, taxable_pay = 400000.0, income_tax = 90000.0 , net_pay = 700000.0 where id = 2;");
-            stmt.executeUpdate("update employee_payroll set basic_pay = 3500000.0 , deductions = 20000.0, taxable_pay = 350000.0, income_tax = 80000.0 , net_pay = 600000.0 where id = 3;");
-            stmt.executeUpdate("update employee_payroll set basic_pay = 3000000.0 , deductions = 25000.0, taxable_pay = 300000.0, income_tax = 75000.0 , net_pay = 500000.0 where id = 4;");
-            stmt.executeUpdate("update employee_payroll set basic_pay = 2500000.0 , deductions = 30000.0, taxable_pay = 250000.0, income_tax = 70000.0 , net_pay = 400000.0 where id = 5;");
-
+//            int isupdated = stmt.executeUpdate("alter table employee_payroll add basic_pay int after salary");
+//            int isupdated1 = stmt.executeUpdate("alter table employee_payroll add deductions int after basic_pay");
+//            int isupdated2 = stmt.executeUpdate("alter table employee_payroll add taxable_pay int after deductions;");
+//            int isupdated3 = stmt.executeUpdate("alter table employee_payroll add income_tax int after taxable_pay");
+//            int isupdated4 = stmt.executeUpdate("alter table employee_payroll add net_pay int after income_tax");
+//            stmt.executeUpdate(" update employee_payroll set basic_pay = 3000000.0 , deductions = 25000.0, taxable_pay = 300000.0, income_tax = 75000.0 , net_pay = 500000.0 where id = 1;");
+//            stmt.executeUpdate(" update employee_payroll set basic_pay = 4000000.0 , deductions = 10000.0, taxable_pay = 400000.0, income_tax = 90000.0 , net_pay = 700000.0 where id = 2;");
+//            stmt.executeUpdate("update employee_payroll set basic_pay = 3500000.0 , deductions = 20000.0, taxable_pay = 350000.0, income_tax = 80000.0 , net_pay = 600000.0 where id = 3;");
+//            stmt.executeUpdate("update employee_payroll set basic_pay = 3000000.0 , deductions = 25000.0, taxable_pay = 300000.0, income_tax = 75000.0 , net_pay = 500000.0 where id = 4;");
+//            stmt.executeUpdate("update employee_payroll set basic_pay = 2500000.0 , deductions = 30000.0, taxable_pay = 250000.0, income_tax = 70000.0 , net_pay = 400000.0 where id = 5;");
+            stmt.executeUpdate("insert into employee_payroll(name, gender, salary, basic_pay, deductions, taxable_pay, income_tax, net_pay, department, start, phonenumber, address) values (\"Terissa\", 'f',600000,300000,25000,300000,75000,500000,\"sales and marketing\",'2020-08-23',321,\"mumbai\")");
         } catch (Exception e){
             e.printStackTrace();
         }
